@@ -47,10 +47,25 @@ jobs:
 
       - name: Build wix4
         shell: cmd
+        continue-on-error: true
         run: ./src/build_official.cmd
         env:
           RuntimeTestsEnabled: true
       
+      - name: Build wix4
+        shell: cmd
+        continue-on-error: true
+        run: ./src/build_official.cmd
+        env:
+          RuntimeTestsEnabled: true
+
+      - name: Build wix4
+        shell: cmd
+        continue-on-error: true
+        run: ./src/build_official.cmd
+        env:
+          RuntimeTestsEnabled: true
+
       - run: |
           wevtutil qe Application /c:20 /rd:true /f:text
           wevtutil qe System /c:20 /rd:true /f:text
