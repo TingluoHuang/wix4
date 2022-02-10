@@ -22,13 +22,12 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
+          Clear-EventLog -LogName application, system
           Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
           ls
           ./winsdksetup.exe /features OptionId.WindowsDesktopDebuggers /norestart /q
-          ls "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64"
-      - run: |
-          Clear-EventLog -LogName application, system
-          
+          ls "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64"          
+
       - run: |
           "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags" /i MSBuild.exe +200
         shell: cmd
@@ -53,3 +52,4 @@ jobs:
           Write-Host Syslog
           Get-EventLog -LogName system -Newest 100 | Select-Object -Property Source, EventID, InstanceId, Message 
         if: always()
+        shell: powershell
