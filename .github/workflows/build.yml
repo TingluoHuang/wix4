@@ -15,14 +15,14 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: windows-2022
+    runs-on: windows-2019
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - run: |
-          Invoke-WebRequest -Uri https://download.microsoft.com/download/d/8/f/d8ff148b-450c-40b3-aeed-2a3944e66bbd/windowssdk/winsdksetup.exe -OutFile ./winsdksetup.exe
+          Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
           ls
           ./winsdksetup.exe /features OptionId.WindowsDesktopDebuggers /norestart /q
           ls "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64"
