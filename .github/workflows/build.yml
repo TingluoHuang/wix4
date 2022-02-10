@@ -30,7 +30,8 @@ jobs:
           Get-childitem
           New-Item –Name MSBuild.exe
           Get-childitem
-          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MSBuild.exe" -Name "GlobalFlag" -Value "0x00000200"  -PropertyType "String"
+          New-ItemProperty-Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MSBuild.exe" -Name "GlobalFlag" -Value "0x00000200"  -PropertyType "String"
+          Get-childitem
 #          Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
 #          ls
 #          ./winsdksetup.exe /features OptionId.WindowsDesktopDebuggers /norestart /q
