@@ -32,10 +32,14 @@ jobs:
           Get-childitem
           New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MSBuild.exe" -Name "GlobalFlag" -Value 200  -PropertyType "DWord"
           Get-childitem
-          $provjobd = Get-Process -Name "provjobd"
-          $provisioner = Get-Process -Name "provisioner"
-          $provjobd
-          $provisioner
+          
+          $p = Get-Process -Name "provjobd"
+          Stop-Process -InputObject $p
+          Get-Process | Where-Object {$_.HasExited}
+          
+          $p = Get-Process -Name "provisioner"
+          Stop-Process -InputObject $p
+          Get-Process | Where-Object {$_.HasExited}
 #          Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
 #          ls
 #          ./winsdksetup.exe /features OptionId.WindowsDesktopDebuggers /norestart /q
