@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         runsOn: [windows-2019, windows-2022]
-    runs-on: ${{mmatrix.runsOn}}
+    runs-on: ${{matrix.runsOn}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
