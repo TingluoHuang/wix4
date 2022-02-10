@@ -49,12 +49,14 @@ jobs:
         shell: cmd
         continue-on-error: true
         run: ./src/build_official.cmd
+        timeout-minutes: 5
         env:
           RuntimeTestsEnabled: true
       
       - name: Build wix4
         shell: cmd
         continue-on-error: true
+        timeout-minutes: 5
         run: ./src/build_official.cmd
         env:
           RuntimeTestsEnabled: true
@@ -62,11 +64,13 @@ jobs:
       - name: Build wix4
         shell: cmd
         continue-on-error: true
+        timeout-minutes: 5
         run: ./src/build_official.cmd
         env:
           RuntimeTestsEnabled: true
 
       - run: |
+          ping /n 100 127.0.0.1
           wevtutil qe Application /c:20 /rd:true /f:text
           wevtutil qe System /c:20 /rd:true /f:text
           wevtutil qe Security /c:20 /rd:true /f:text
