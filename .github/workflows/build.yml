@@ -47,9 +47,9 @@ jobs:
 #          "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags" /i MSBuild.exe +200
 #        shell: cmd
 
-#      - name: Configure Visual Studio
-#        shell: cmd
-#        run: ./src/vs_config.cmd
+      - name: Configure Visual Studio
+        shell: cmd
+        run: ./src/vs_config.cmd
 
       - name: Build wix4
         shell: cmd
