@@ -26,7 +26,6 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          Clear-EventLog -LogName application, system
           Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
           ls
           ./winsdksetup.exe /features OptionId.WindowsDesktopDebuggers /norestart /q
@@ -47,13 +46,6 @@ jobs:
           RuntimeTestsEnabled: true
       
       - run: |
-          Write-Host Applog
-          Get-EventLog -LogName application -Newest 100
-          Write-Host Syslog
-          Get-EventLog -LogName system -Newest 100
-          Write-Host Applog
-          Get-EventLog -LogName application -Newest 100 | Select-Object -Property Source, EventID, InstanceId, Message
-          Write-Host Syslog
-          Get-EventLog -LogName system -Newest 100 | Select-Object -Property Source, EventID, InstanceId, Message 
+          wevtutil qe Application /c:100 /f:text
         if: always()
-        shell: powershell
+        shell: cmd
