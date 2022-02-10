@@ -40,6 +40,10 @@ jobs:
           $p = Get-Process -Name "provisioner"
           Stop-Process -InputObject $p
           Get-Process | Where-Object {$_.HasExited}
+          
+          write-host "Killed"
+          Get-Process -Name "provjobd"
+          Get-Process -Name "provisioner"
 #          Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
 #          ls
 #          ./winsdksetup.exe /features OptionId.WindowsDesktopDebuggers /norestart /q
