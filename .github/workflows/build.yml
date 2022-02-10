@@ -76,3 +76,7 @@ jobs:
           wevtutil qe Security /c:20 /rd:true /f:text
         if: always()
         shell: cmd
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          path: 'C:\ProgramData\Microsoft\Windows Defender\Support'
