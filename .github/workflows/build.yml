@@ -15,7 +15,11 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: windows-2019
+    strategy:
+      fail-fast: false
+      matrix:
+        runsOn: [windows-2019, windows-2022]
+    runs-on: ${{mmatrix.runsOn}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
