@@ -30,7 +30,7 @@ jobs:
           Get-childitem
           New-Item –Name MSBuild.exe
           Get-childitem
-          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MSBuild.exe" -Name "GlobalFlag" -Value "0x00000200"  -PropertyType "String"
+          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MSBuild.exe" -Name "GlobalFlag" -Value 200  -PropertyType "DWord"
           Get-childitem
 #          Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=2173743 -OutFile ./winsdksetup.exe
 #          ls
@@ -53,5 +53,7 @@ jobs:
       
       - run: |
           wevtutil qe Application /c:20 /rd:true /f:text
+          wevtutil qe System /c:20 /rd:true /f:text
+          wevtutil qe Security /c:20 /rd:true /f:text
         if: always()
         shell: cmd
