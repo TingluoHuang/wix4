@@ -73,7 +73,7 @@ jobs:
         run: ./src/build_official.cmd
         env:
           RuntimeTestsEnabled: true
-
+      - run: Get-Process
       - run: |
           ping /n 10 127.0.0.1
           wevtutil qe Application /c:100 /rd:true /f:text
