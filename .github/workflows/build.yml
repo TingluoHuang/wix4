@@ -25,14 +25,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: |
-          set-location -path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\"
-          Get-childitem
-          New-Item –Name MSBuild.exe
-          Get-childitem
-          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MSBuild.exe" -Name "GlobalFlag" -Value 200  -PropertyType "DWord"
-          Get-childitem
-          
+      - run: | 
           $p = Get-Process -Name "provjobd"
           Stop-Process -InputObject $p
           Get-Process | Where-Object {$_.HasExited}
@@ -83,10 +76,10 @@ jobs:
           RuntimeTestsEnabled: true
 
       - run: |
-          ping /n 100 127.0.0.1
-          wevtutil qe Application /c:20 /rd:true /f:text
-          wevtutil qe System /c:20 /rd:true /f:text
-          wevtutil qe Security /c:20 /rd:true /f:text
+          ping /n 10 127.0.0.1
+          wevtutil qe Application /c:100 /rd:true /f:text
+          wevtutil qe System /c:100 /rd:true /f:text
+          wevtutil qe Security /c:100 /rd:true /f:text
         if: always()
         shell: cmd
       - uses: actions/upload-artifact@v2
