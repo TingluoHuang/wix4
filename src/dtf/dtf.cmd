@@ -8,15 +8,21 @@
 
 @echo Cleaning dtf %_C%
 
-msbuild -Restore -t:Clean dtf.sln -p:Configuration=%_C% || exit /b
+msbuild -Restore -t:Clean dtf.sln -p:Configuration=%_C%
 
 @echo Building dtf %_C%
 
-msbuild -Restore -t:Build dtf.sln -p:Configuration=%_C% || exit /b
+msbuild -Restore -t:Build dtf.sln -p:Configuration=%_C%
 
 @echo Cleaning and Building dtf %_C%
 
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C% || exit /b
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+
+@echo Cleaning and Building dtf %_C%
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+
+@echo Cleaning and Building dtf %_C%
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
 @popd
 @endlocal
