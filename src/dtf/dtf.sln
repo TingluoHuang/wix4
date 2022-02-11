@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixToolset.Dtf.Compression", "WixToolset.Dtf.Compression\WixToolset.Dtf.Compression.csproj", "{2D62850C-9F81-4BE9-BDF3-9379389C8F7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixToolset.Dtf.Resources", "WixToolset.Dtf.Resources\WixToolset.Dtf.Resources.csproj", "{44931ECB-8D6F-4C12-A872-64E261B6A98E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
