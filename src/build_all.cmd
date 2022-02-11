@@ -18,46 +18,6 @@ call build_init.cmd
 
 call dtf\dtf.cmd %_C% || exit /b
 
-
-:: internal
-
-call internal\internal.cmd %_C% || exit /b
-
-
-:: libs
-
-call libs\libs.cmd %_C% || exit /b
-
-
-:: api
-
-call api\api.cmd %_C% || exit /b
-
-
-:: burn
-
-call burn\burn.cmd %_C% || exit /b
-
-
-:: wix
-
-call wix\wix.cmd %_C% || exit /b
-
-
-:: ext
-
-call ext\ext.cmd %_C% || exit /b
-
-
-:: samples
-
-call samples\samples.cmd %_C% || exit /b
-
-
-:: integration tests
-
-call test\test.cmd %_C% || exit /b
-
 goto LExit
 
 :StartDeveloperCommandPrompt
