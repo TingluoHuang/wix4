@@ -9,7 +9,13 @@
 @echo Building dtf %_C%
 
 
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C% -nologo -fl -flp:logfile=actions_cancel_debug.log;verbosity=diagnostic -warnaserror -bl:..\..\build\logs\dtf_build.binlog || exit /b
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C% || exit /b
+
+
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C% || exit /b
+
+
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C% || exit /b
 
 @popd
 @endlocal
