@@ -24,5 +24,11 @@ msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 @echo Cleaning and Building dtf %_C%
 msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
+@echo Cleaning and Building dtf %_C%
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+
+@echo Cleaning and Building dtf %_C%
+msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+
 @popd
 @endlocal
