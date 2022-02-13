@@ -6,6 +6,8 @@
 @if /i "%1"=="release" set _C=Release
 @if not "%1"=="" shift & goto parse_args
 
+echo start...
+
 @if "%VCToolsVersion%"=="" call :StartDeveloperCommandPrompt || exit /b
 
 @echo build %_C%
@@ -35,6 +37,7 @@ if not exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
 for /f "usebackq delims=" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -version [17.0^,18.0^) -property installationPath`) do (
   if exist "%%i\Common7\Tools\vsdevcmd.bat" (
+    echo Call vsdevcmd.bat
     call "%%i\Common7\Tools\vsdevcmd.bat" -no_logo
     exit /b
   )
