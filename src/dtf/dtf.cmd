@@ -8,27 +8,27 @@
 
 @echo Cleaning dtf %_C%
 
-msbuild -Restore -t:Clean dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Clean dtf.sln -p:Configuration=%_C%
 
 @echo Building dtf %_C%
 
-msbuild -Restore -t:Build dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Build dtf.sln -p:Configuration=%_C%
 
 @echo Cleaning and Building dtf %_C%
 
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
 @echo Cleaning and Building dtf %_C%
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
 @echo Cleaning and Building dtf %_C%
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
 @echo Cleaning and Building dtf %_C%
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
 @echo Cleaning and Building dtf %_C%
-msbuild -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
+"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\amd64\MSBuild.exe" -Restore -t:Clean;Build dtf.sln -p:Configuration=%_C%
 
 @popd
 @endlocal
