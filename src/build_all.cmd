@@ -8,7 +8,7 @@
 
 echo start...
 
-:: @if "%VCToolsVersion%"=="" call :StartDeveloperCommandPrompt || exit /b
+@if "%VCToolsVersion%"=="" call :StartDeveloperCommandPrompt || exit /b
 
 @echo build %_C%
 
@@ -17,6 +17,8 @@ echo start...
 call build_init.cmd
 
 :: DTF
+
+where msbuild
 
 call dtf\dtf.cmd %_C% || exit /b
 
