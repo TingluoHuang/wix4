@@ -8,7 +8,7 @@
 
 echo start...
 
-@if "%VCToolsVersion%"=="" call :StartDeveloperCommandPrompt || exit /b
+:: @if "%VCToolsVersion%"=="" call :StartDeveloperCommandPrompt || exit /b
 
 @echo build %_C%
 
