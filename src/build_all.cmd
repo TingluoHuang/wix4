@@ -7,11 +7,13 @@
 
 @echo build %_C%
 
-call build_init.cmd || exit /b 1
+rmdir /S /Q ..\build\artifacts
+rmdir /S /Q ..\build\logs\TestResults
+
+md ..\build\artifacts
+md ..\build\logs\TestResults
 
 :: DTF
-
-where msbuild
 
 call dtf\dtf.cmd %_C% || exit /b 1
 
